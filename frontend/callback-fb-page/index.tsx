@@ -11,25 +11,15 @@ const CallbackFBPage = () => {
   useEffect(() => {
     const sendCallbackFB = async () => {
       try {
-        // Mengambil access token dari LocalStorage
-        // const accessToken = window.localStorage.getItem('accessToken')
-
-        // await axios.get(socmedApi.callbackFB + code, {
-        //   headers: {
-        //     Authorization: `Bearer ${accessToken}`
-        //   }
-        // })
-
-        //code ini dari facebook ingin di lempar ke callback API agar dapat memproses fb strategy
         const code = new URLSearchParams(window.location.search).get('code');
 
+        // Mengirim code ke API Node.js melalui route '/callback-facebook'
         await axios.get(socmedApi.callbackFB + '?code=' + code);
 
-        // await window.localStorage.getItem('accessToken')
         window.close;
 
         //after successfully
-        router.push('/link-social');
+        // router.push('/link-social');
       } catch (error) {
         console.error('Error:', error)
       }

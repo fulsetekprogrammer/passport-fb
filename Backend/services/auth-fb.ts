@@ -110,10 +110,10 @@ export const loginCallback = async (ctx, res) => {
 
     console.log('facebook callback first')
 
-    passport.authenticate('facebook', {
+    // passport.authenticate('facebook', {
 
-        successRedirect: 'http://localhost:3000/callback-fb-page',
-        failureRedirect: process.env.FRONTEND_API + '/login'
-    })(ctx, res)
+    //     successRedirect: 'http://localhost:3000/callback-fb-page',
+    //     failureRedirect: process.env.FRONTEND_API + '/login'
+    // })(ctx, res)
 
 }
